@@ -2,7 +2,6 @@
   "variables": {
     "allowedOrigin": "http://localhost:3000",
     "authorizedRedirectURL": "http://localhost:3000",
-    "authorizedPostLogoutURL": "http://localhost:3000/logged-out",
     "authorizedOriginURL": "http://localhost:3000",
     "logoutURL": "http://localhost:3000",
     "applicationId": "e9fdb985-9173-4e01-9d73-ac2d60d1dc8e",
@@ -63,7 +62,10 @@
       "body": {
         "user": {
           "email": "#{adminEmail}",
-          "password": "#{adminPassword}"
+          "password": "#{adminPassword}",
+          "firstName": "Admin",
+          "lastName": "User",
+          "birthDate": "1984-01-07"
         },
         "registration": {
           "applicationId": "#{FUSIONAUTH_APPLICATION_ID}",
@@ -91,7 +93,6 @@
           "name": "Quick Start App",
           "oauthConfiguration": {
             "authorizedRedirectURLs": [
-              "#{authorizedPostLogoutURL}",
               "#{authorizedRedirectURL}"
             ],
             "authorizedOriginURLs": [
