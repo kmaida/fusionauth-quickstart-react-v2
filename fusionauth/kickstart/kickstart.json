@@ -104,8 +104,10 @@
               "authorization_code",
               "refresh_token"
             ],
-            "debug": true,
+            "clientAuthenticationPolicy": "NotRequiredWhenUsingPKCE",
+            "proofKeyForCodeExchangePolicy": "Required",
             "generateRefreshTokens": true,
+            "debug": true,
             "requireRegistration": true
           },
           "jwtConfiguration": {
