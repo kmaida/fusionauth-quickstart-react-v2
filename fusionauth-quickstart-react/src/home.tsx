@@ -6,6 +6,7 @@ export default function Home() {
   const navigate = useNavigate();
   const { isLoggedIn, startLogin, startLogout, userInfo } = useFusionAuth();
   useEffect(() => {
+    // Post-login redirect to account page
     if (isLoggedIn && sessionStorage.getItem('justLoggedIn') === 'true') {
       sessionStorage.removeItem('justLoggedIn');
       navigate("/account");
@@ -18,7 +19,7 @@ export default function Home() {
         {isLoggedIn ? (
           <>
           <span className='white'>{userInfo?.email}</span>
-          <button className='button' onClick={() => startLogout()}>Logout</button>
+          <button className='button' onClick={() => startLogout()}>Log Out</button>
           </>
         ) : (
           <button
@@ -28,7 +29,7 @@ export default function Home() {
               startLogin("state-from-login");
             }}
           >
-            Login
+            Log In
           </button>
         )}
       </div>
