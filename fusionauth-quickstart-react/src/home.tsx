@@ -1,9 +1,10 @@
+import { useNavigate } from 'react-router-dom';
 import { useEffect } from 'react';
-import { useNavigate } from "react-router-dom";
 import { useFusionAuth} from '@fusionauth/react-sdk';
 
 export default function Home() {
   const navigate = useNavigate();
+
   const { isLoggedIn, startLogin, startLogout, userInfo } = useFusionAuth();
   useEffect(() => {
     // Post-login redirect to account page
@@ -12,24 +13,24 @@ export default function Home() {
       navigate("/account");
     }
   }, [isLoggedIn, navigate]);
-
+  
   return (
     <div>
       <div className="titlebar">
         {isLoggedIn ? (
           <>
           <span className='white'>{userInfo?.email}</span>
-          <button className='button' onClick={() => startLogout()}>Log Out</button>
+          <button className='button' onClick={() => startLogout()}>Logout</button>
           </>
         ) : (
           <button
             className='button'
             onClick={() => {
               sessionStorage.setItem('justLoggedIn', 'true');
-              startLogin("state-from-login");
-            }}
+                startLogin("state-from-login");
+              }}
           >
-            Log In
+            Login
           </button>
         )}
       </div>

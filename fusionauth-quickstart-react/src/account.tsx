@@ -1,14 +1,16 @@
-import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useFusionAuth } from '@fusionauth/react-sdk';
+import { useEffect, useState } from 'react';
 
 export default function Account() {
   const navigate = useNavigate();
+
   const { isLoggedIn, isFetchingUserInfo, startLogout, userInfo } = useFusionAuth();
+  
   const [newUserInfo, setNewUserInfo] = useState({'given_name': '', 'family_name': '', 'birthdate': ''});
-  
+
   useEffect(() => { if (!isLoggedIn) navigate("/"); }, [isLoggedIn, navigate]);
-  
+
   async function getUserInfo() {
     const response = await fetch('http://localhost:9011/app/me', {
       'method': 'GET',
@@ -20,14 +22,14 @@ export default function Account() {
   }
 
   if (!isLoggedIn || isFetchingUserInfo) return null;
-  
+
   return (
     <div>
       <div className="titlebar">
         <span className='white'>{userInfo?.email}</span>
         <button className='button' onClick={() => startLogout()}>Logout</button>
       </div>
-      <div className='centerContainer'>
+      <div className='centerContainer'> 
         <div className="userInfoGrid">
           <div>Name:</div>
           <div>{newUserInfo?.given_name} {newUserInfo?.family_name}</div>
