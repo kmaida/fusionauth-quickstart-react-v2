@@ -18,12 +18,12 @@ Clone this repository.
 
 ## Install FusionAuth
 
-1. From the `/fusionauth` directory, run the following Docker compose command: `docker compose up -d`
+1. From the `/fusionauth-quickstart-react` directory, run the following Docker compose command: `docker compose up -d`
 2. After the compose process is successful, you can access FusionAuth in your browser at [http://localhost:9011/admin](http://localhost:9011/admin)
 3. You can log into your FusionAuth admin dashboard with the username `admin@example.com` and the password `password`
 
 ## Set up the React app
 
-1. From the `/fusionauth-quickstart-react` folder, run the following command: `npm install`
+1. From the `/app-quickstart-react` folder, run the following command: `npm install`
 2. To start the React app, run `npm run dev`
 3. The app will be accessible in the browser at [http://localhost:3000](http://localhost:3000)
