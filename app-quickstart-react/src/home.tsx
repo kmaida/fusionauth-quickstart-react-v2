@@ -27,8 +27,8 @@ export default function Home() {
             className='button'
             onClick={() => {
               sessionStorage.setItem('justLoggedIn', 'true');
-                startLogin("state-from-login");
-              }}
+              startLogin();
+            }}
           >
             Login
           </button>

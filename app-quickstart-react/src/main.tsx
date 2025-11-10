@@ -14,7 +14,7 @@ const fusionAuthProviderConfig: FusionAuthProviderConfig = {
   scope: 'openid email profile offline_access',
   clientId: 'e9fdb985-9173-4e01-9d73-ac2d60d1dc8e',
   serverUrl: 'http://localhost:9011',
-  onRedirect: (state?: string) => { console.log(`Redirect happened with state value: ${state}`); }
+  onRedirect: () => { console.log('Login successful'); }
 };
 
 function App() {
