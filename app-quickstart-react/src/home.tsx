@@ -1,6 +1,6 @@
 import { useNavigate } from 'react-router-dom';
+import { useFusionAuth } from '@fusionauth/react-sdk';
 import { useEffect } from 'react';
-import { useFusionAuth} from '@fusionauth/react-sdk';
 
 export default function Home() {
   const navigate = useNavigate();
